@@ -80,9 +80,12 @@ class List extends Component {
                 {!loading && !hasErrors && items.length === 0 && (<span>No posts exists</span>)}
                 {!loading && !hasErrors && items.length > 0 && items.map((item, index) => (
                     <article key={index}>
-                        <h3>{item.title}</h3>
+                        <h3>
+                            <Link to={POST_URLS.READ.replace('{id}',item.id)}>
+                                {item.title}
+                            </Link>
+                        </h3>
                         <p>{item.text}</p>
-                        <p><Link to={POST_URLS.READ.replace('{id}',item.id)}>read more...</Link></p>
                     </article>
                 ))}
                 {!loading && !hasErrors && hasNextPage && (

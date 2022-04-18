@@ -28,7 +28,7 @@ export const getDummyDataList = () => {
  */
 export const getDummyDataById = (id) => {
     let dummyData = default_complete_list;
-    const dummyDataById = dummyData.filter(item => item.id === id);
+    const dummyDataById = dummyData.filter(item => item.id === +id);
 
     let data = null;
     if(dummyDataById && dummyDataById.length > 0) {
